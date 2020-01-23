@@ -1,0 +1,23 @@
+<body>
+	<div class="jumbotron vertical-center">
+		<div class="container text-center">
+			<h1><b>Schedule Optimizer</b></h1>
+			<%if admin_signed_in?%>
+			  <h2> ADMIN </h2>
+		      <div>
+		      	Signed in as ... <%= current_admin.email %>
+		      </div>
+		   <%elsif user_signed_in?%>
+		   	  <h2> USER </h2>
+		      <div>
+		      	Signed in as ... <%= current_user.email %>
+		      </div>
+		    <% else %>
+			    <%= link_to "User Login", new_user_session_path,  class:"btn btn-warning" %>
+			    <%= link_to "Create New User Account", new_user_registration_path,  class:"btn btn-warning" %>
+			    <%= link_to "Admin Login", new_admin_session_path,  class:"btn btn-warning" %>
+			    <%= link_to "Create New Admin Account", new_admin_registration_path,  class:"btn btn-warning" %>
+		    <%end%>
+		</div>
+	</div>
+</body>
