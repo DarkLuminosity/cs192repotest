@@ -1,4 +1,5 @@
-<!-- License:
+<!-- 
+License:
 This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2019-2020
 - Engelberg See
 
@@ -6,31 +7,48 @@ Code History:
 Engelberg See - 01/21/20 - Created the view for the home page
 Engelberg See - 01/22/20 - Modified to show which user is logged in
 Engelberg See - 01/29/20 - Added license, code history and Internal Documentation
+John Matthew Ramos - 1/30/20 - Modified HTML code.
 
 File Creation Date: 01/20/20
 Development Group: Engelberg See
-Purpose: Displays what the user of the application would see when going to the home page -->
+Purpose: Displays what the user of the application would see when going to the home page-->
 
 <body>
-	<div class="jumbotron vertical-center">
-		<div class="container text-center">
-			<h1><b>Schedule Optimizer</b></h1>
-			<%if admin_signed_in?%>
-			  <h2> ADMIN </h2>
-		      <div>
-		      	Signed in as ... <%= current_admin.email %>
-		      </div>
-		   <%elsif user_signed_in?%>
-		   	  <h2> USER </h2>
-		      <div>
-		      	Signed in as ... <%= current_user.email %>
-		      </div>
-		    <% else %>
-			    <%= link_to "User Login", new_user_session_path,  class:"btn btn-warning" %>
-			    <%= link_to "Create New User Account", new_user_registration_path,  class:"btn btn-warning" %>
-			    <%= link_to "Admin Login", new_admin_session_path,  class:"btn btn-warning" %>
-			    <%= link_to "Create New Admin Account", new_admin_registration_path,  class:"btn btn-warning" %>
-		    <%end%>
-		</div>
-	</div>
+
+	<section id="intro" class="clearfix">
+	    <div class="container d-flex h-200">
+	      <div class="row justify-content-center align-self-center">
+	        <div class="col-md-6 intro-info order-md-first order-last">
+	          <h2>Schedule<br>Optimization <span>For Students!</span></h2>
+	          <div>
+	            	<%if admin_signed_in?%>
+					  	<h2> ADMIN </h2>
+				      	<div>
+				    		Signed in as ... <%= current_admin.email %>
+				      	</div>
+				   	<%elsif user_signed_in?%>
+				   		<h2> USER </h2>
+				      	<div>
+				      		Signed in as ... <%= current_user.email %>
+				      	</div>
+				    <% else %>
+					    <%= link_to "User Login", new_user_session_path,  class:"btn btn-get-started" %>
+					    <%= link_to "Create New User Account", new_user_registration_path,  class:"btn btn-get-started" %>
+					    <%= link_to "Admin Login", new_admin_session_path,  class:"btn btn-get-started" %>
+					    <%= link_to "Create New Admin Account", new_admin_registration_path,  class:"btn btn-get-started" %>
+				    <%end%>
+	          	<div class="col-md-6 intro-info order-md-first order-last">
+
+        		</div>
+
+	          </div>
+	        </div>
+	  
+	        <div class="col-md-6 intro-img order-md-last order-first">
+	          <img alt="" class="img-fluid">
+	        </div>
+	      </div>
+
+	    </div>
+ 	</section>
 </body>

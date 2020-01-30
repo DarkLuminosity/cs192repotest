@@ -1,8 +1,24 @@
-<h2>Change your password</h2>
+<!-- License:
+This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2019-2020
+- John Matthew Ramos
+
+Code History:
+Engelberg See - 01/20/20 - Generated the code for the application
+John Matthew Ramos - 01/30/20 - Modified HTML code and added license.
+
+File Creation Date: 01/20/20
+Development Group: Engelberg See
+Purpose: Password message -->
+
+<div class="row justify-content-center 
+align-self-center">
+  <div class="col-md-6 intro-info order-md-first order-last">
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
+
+<h2>Change youdr password</h2>
 
   <div class="field">
     <%= f.label :password, "New password" %><br />
@@ -23,3 +39,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>

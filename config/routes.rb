@@ -10,7 +10,9 @@
 # Development Group: Engelberg See
 # Purpose: Essential for the application to have an index page where all actions can be made
 
+
 Rails.application.routes.draw do
+  get 'main/index'
   get 'home/index'
   root 'home#index'
   devise_for :admins

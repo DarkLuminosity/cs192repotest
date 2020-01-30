@@ -17,7 +17,7 @@ gem 'sass-rails', '>= 6'
 gem 'devise'
 
 #for boostrap
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 
 gem 'webpacker', '~> 4.0'
