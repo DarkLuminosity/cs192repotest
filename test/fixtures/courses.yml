@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  classcode: 1
+  classname: MyString
+  credits: 1.5
+  schedule: MyString
+  room_place: MyString
+  instructor: MyString
+
+two:
+  classcode: 1
+  classname: MyString
+  credits: 1.5
+  schedule: MyString
+  room_place: MyString
+  instructor: MyString

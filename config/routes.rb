@@ -12,6 +12,8 @@
 
 
 Rails.application.routes.draw do
+  resources :preferredsubjects
+  resources :courses
   get 'main/index'
   get 'home/index'
   root 'home#index'

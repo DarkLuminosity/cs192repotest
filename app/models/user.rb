@@ -3,6 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :courses, :through => :preferredsubjects
+  has_many :preferredsubjects, :dependent => :destroy
+
+
   # attr_accessor :login
   # validates :username, presence: true, length: {maximum: 255}, uniqueness: { case_sensitive: false }, format: { with: /\A[a-zA-Z0-9]*\z/, message: "may only contain letters and numbers." }
 	# def self.find_first_by_auth_conditions(warden_conditions)

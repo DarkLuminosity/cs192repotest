@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Preferredsubjects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Classcode</th>
+      <th>Class Name</th>
+      <th>Credits</th>
+      <th>Schedule</th>
+      <th>Room and Building</th>
+      <th>Instructor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @preferredsubjects.each do |preferredsubject| %>
+      <tr>
+        <td><%= preferredsubject.course.classcode %></td>
+        <td><%= preferredsubject.course.classname %></td>
+        <td><%= preferredsubject.course.credits %></td>
+        <td><%= preferredsubject.course.schedule %></td>
+        <td><%= preferredsubject.course.room_place %></td>
+        <td><%= preferredsubject.course.instructor %></td>
+        <%if false%>
+          <td><%= link_to 'Show', preferredsubject %></td>
+        <%end%>
+        <td><%= link_to 'Edit', edit_preferredsubject_path(preferredsubject) %></td>
+        <td><%= link_to 'Delete', preferredsubject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Preferredsubject', new_preferredsubject_path %>

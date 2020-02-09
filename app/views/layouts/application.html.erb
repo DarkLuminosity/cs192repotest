@@ -76,6 +76,10 @@ Purpose: Displays the navigation bar for the application for the user to have an
 			<% end %>
             <ul>
               <li class="active"><a href="#intro">Home</a></li>
+              <%= link_to 'Courses', courses_path %>
+              <%if user_signed_in?%>
+                <%= link_to 'Preferred Subjects', preferredsubjects_path %>
+              <%end%>
               <!--<li><a href="#about">About Us</a></li>
               <li><a href="#portfolio">Portfolio</a></li>
               <li><a href="#team">Team</a></li>-->

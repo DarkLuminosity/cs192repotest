@@ -1,0 +1,29 @@
+<%= form_with(model: preferredsubject, local: true) do |form| %>
+  <% if preferredsubject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(preferredsubject.errors.count, "error") %> prohibited this preferredsubject from being saved:</h2>
+
+      <ul>
+        <% preferredsubject.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <div class="field">
+      <%= form.hidden_field :user_id, value:current_user.id %>
+    </div>
+  <% end %>
+    
+    <div class="field">
+      <%= form.label :course_id %>
+      <%= form.select :course_id, Course.all.collect {|p| [ p.classname, p.id ] }, { :include_blank => "Please select" } %>
+    </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>

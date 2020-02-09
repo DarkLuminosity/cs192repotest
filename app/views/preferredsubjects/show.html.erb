@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @preferredsubject.course.classname %>
+</p>
+
+<%= link_to 'Edit', edit_preferredsubject_path(@preferredsubject) %> |
+<%= link_to 'Back', preferredsubjects_path %>
