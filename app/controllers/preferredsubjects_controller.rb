@@ -4,7 +4,7 @@ class PreferredsubjectsController < ApplicationController
   # GET /preferredsubjects
   # GET /preferredsubjects.json
   def index
-    @preferredsubjects = Preferredsubject.all
+    @preferredsubjects = current_user.preferredsubjects
   end
 
   # GET /preferredsubjects/1

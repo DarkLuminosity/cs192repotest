@@ -1,34 +1,68 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Classcode:</strong>
-  <%= @course.classcode %>
-</p>
+    <section id="portfolio" class="section-bg">
+      <div class="container">
+<div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h3 style="color: #413e66;" class="footer-info">Courses</h3>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Classcode</th>
+                      <th>Classname</th>
+                      <th>Credits</th>
+                      <th>Schedule</th>
+                      <th>Room place</th>
+                      <th>Instructor</th>
+                    </tr>
+                  </thead>
+                    <tbody>
+                        <tr>
+                          <td ><%= @course.classcode %></td>
+                          <td><%= @course.classname %></td>
+                          <td><%= @course.credits %></td>
+                          <td><%= @course.schedule %></td>
+                          <td><%= @course.room_place %></td>
+                          <td><%= @course.instructor %></td>
+                          
+                        </tr>
+                    </tbody>                  
 
-<p>
-  <strong>Classname:</strong>
-  <%= @course.classname %>
-</p>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<p>
-  <strong>Credits:</strong>
-  <%= @course.credits %>
-</p>
+<section id="services" class="section-bg">
+      <div class="container">
 
-<p>
-  <strong>Schedule:</strong>
-  <%= @course.schedule %>
-</p>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="title"><a href=""><%= link_to 'Edit', edit_course_path(@course) %>
+</a></h4>
+              <p class="description">Edit this course.</p>
+            </div>
+          </div>
 
-<p>
-  <strong>Room place:</strong>
-  <%= @course.room_place %>
-</p>
+          <div class="col-md-2 col-lg-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="title"><a href=""><%= link_to 'Back', courses_path %>
 
-<p>
-  <strong>Instructor:</strong>
-  <%= @course.instructor %>
-</p>
+</a></h4>
+              <p class="description">Go back to the courses page.</p>
+            </div>
+          </div>
+        </div>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
+      </div>
+    </section>
+      <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
+
+<p id="notice"><%= notice %></p>

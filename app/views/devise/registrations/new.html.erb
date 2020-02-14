@@ -12,51 +12,94 @@ Development Group: Engelberg See
 Purpose: Displays what the user of the application would see when trying to register an account 
 <%end%>
 
-<div class="row justify-content-center align-self-center">
-  <div class="col-md-6 intro-info order-md-first order-last">
+
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= render "devise/shared/error_messages", resource: resource %>
 
 
-    <h2>Sign up</h2>
+ <footer id="footer" class="section-bg">
+    <div class="footer-top">
+      <div class="container">
 
-    <div class="form">
+        <div class="row">
 
-    <h4>Join us!</h4>
-    <p>Join thousands of UP Diliman Students who are using our Schedule Optimizer!</p>
+          <div class="col-lg-60">
 
-    <form action="" method="post" role="form" class="contactForm">
-      <div class="form-group">
-        <%= f.label :username %><br />
-        <%= f.text_field :username %>
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                  <div class="footer-info">
+                    <h3>Optimizer</h3>
+                    <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  
+            <div class="form">
+              
+              <h4>Send us a message</h4>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <p>Eos ipsa est voluptates. Nostrum nam libero ipsa vero. Debitis quasi sit eaque numquam similique commodi harum aut temporibus.</p>
+              <form action="" method="post" role="form" class="contactForm">
+                <div class="form-group">
+                    <%= f.label :username %><br />
+                    <%= f.text_field :username %>
+                  <div class="validation"></div>
+                </div>
+                 <div class="form-group">
+                    <%= f.label :email %><br />
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                  <div class="validation"></div>
+                </div>               
+                 <div class="form-group">
+                    <%= f.label :password %>
+                    <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                    <% end %><br />
+                    <%= f.password_field :password, autocomplete: "new-password" %>
+                  <div class="validation"></div>
+                </div>               
+                 <div class="form-group">
+                    <%= f.label :password_confirmation %><br />
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                  <div class="validation"></div>
+                </div>
+
+
+                <div class="actions">
+                  <%= f.submit "Sign up" %>
+                </div>
+                <%= render "devise/shared/links" %>
+
+
+                <div id="sendmessage">Your message has been sent. Thank you!</div>
+                <div id="errormessage"></div>
+              </form>
+            </div>
+
+                </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+          </div>
+
+          
+
+        </div>
+
       </div>
-      
-      <div class="form-group">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-                
-      <div class="form-group">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
-            
-      <div class="form-group">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
-    </form>
-
-    <div class="actions">
-      <%= f.submit "Sign up" %>
     </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+    <div class="container">
 
-</div>
-</div>
+    </div>
+  </footer><!-- #footer -->
+
+
+  <% end %>

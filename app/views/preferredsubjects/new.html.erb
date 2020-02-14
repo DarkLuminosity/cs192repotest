@@ -1,5 +1,26 @@
-<h1>New Preferredsubject</h1>
+<%if false%> 
+License:
+This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2019-2020
+- Engelberg See
 
-<%= render 'form', preferredsubject: @preferredsubject %>
+Code History:
+Engelberg See - 02/08/20 - Generated Preferred Subjects file, Edited What to show
+John Matthew Ramos - 02/13/20 - Made the UI
+File Creation Date: 02/08/20
+Development Group: Engelberg See
+Purpose: Associates the foreign key to another table
+<%end%>
 
-<%= link_to 'Back', preferredsubjects_path %>
+<section id="pricing" class="wow fadeInUp section-bg">
+
+      <div class="container">
+        <header class="section-header">
+          <h3>Add Preferred Subject</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </header>
+ <%= render 'form', preferredsubject: @preferredsubject %>
+<%= link_to 'Back', preferredsubjects_path%>
+
+      	 </div>
+    </section><!-- #pricing -->
+

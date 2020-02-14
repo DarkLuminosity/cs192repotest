@@ -1,9 +1,30 @@
-<p id="notice"><%= notice %></p>
+    <section id="portfolio" class="section-bg">
 
-<p>
-  <strong>Course:</strong>
-  <%= @preferredsubject.course.classname %>
-</p>
+<section id="services" class="section-bg">
+      <div class="container">
 
-<%= link_to 'Edit', edit_preferredsubject_path(@preferredsubject) %> |
-<%= link_to 'Back', preferredsubjects_path %>
+        <header class="section-header">
+          <h3><%= @preferredsubject.course.classname %></h3>
+          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="title"><a href=""><%= link_to 'Edit', edit_preferredsubject_path(@preferredsubject)%></a></h4>
+              <p class="description">Change the course that you have chosen.</p>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-lg-4 col-lg-6 col-md-6 col-sm-12 col-xs-12 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="title"><a href=""><%= link_to 'Confirm', preferredsubjects_path %>
+</a></h4>
+              <p class="description">Go back to the preferred subjects page.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </section>
