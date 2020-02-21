@@ -12,6 +12,7 @@
 
 
 Rails.application.routes.draw do
+  resources :instructors
   resources :preferredsubjects
   resources :courses
   get 'main/index'

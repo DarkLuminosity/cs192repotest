@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Instructors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Helpfulness</th>
+      <th>Easiness</th>
+      <th>Pedagogy</th>
+      <th>Overall</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <%if admin_signed_in?%>
+    <%= link_to 'New Instructor', new_instructor_path %>
+    <%end%>
+
+  <tbody>
+    <% @instructors.each do |instructor| %>
+      <tr>
+        <td><%= instructor.name %></td>
+        <td><%= instructor.helpfulness %></td>
+        <td><%= instructor.easiness %></td>
+        <td><%= instructor.pedagogy %></td>
+        <td><%= instructor.overall %></td>
+        <%if admin_signed_in?%>
+        <td><%= link_to 'Show', instructor %></td>
+        <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
+        <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
