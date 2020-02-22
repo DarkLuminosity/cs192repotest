@@ -92,6 +92,7 @@ Purpose: Displays the navigation bar for the application for the user to have an
               <li>
               <%if user_signed_in?%>
                 <%= link_to 'Preferred Subjects', preferredsubjects_path %>
+                <%= link_to 'Preferences', preferences_path %>
               <%end%>
               <li>
               <%= link_to 'Instructors', instructors_path %></li>

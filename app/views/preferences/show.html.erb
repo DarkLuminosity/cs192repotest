@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Choice 1:</strong>
+  <%= @preference.choice1 %>
+</p>
+
+<p>
+  <strong>Choice 2:</strong>
+  <%= @preference.choice2 %>
+</p>
+
+<p>
+  <strong>Choice 3:</strong>
+  <%= @preference.choice3 %>
+</p>
+
+<%= link_to 'Edit', edit_preference_path(@preference) %> |
+<%= link_to 'Back', preferences_path %>

@@ -1,0 +1,39 @@
+<%= form_with(model: preference, local: true) do |form| %>
+  <% if preference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(preference.errors.count, "error") %> prohibited this preference from being saved:</h2>
+
+      <ul>
+        <% preference.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <div class="field">
+      <%= form.hidden_field :user_id, :value => current_user.id %>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :choice1 %>
+    <%= form.select(:choice1, Preference::PREF) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :choice2 %>
+    <%= form.select(:choice2, Preference::PREF) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :choice3 %>
+    <%= form.select(:choice3, Preference::PREF) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

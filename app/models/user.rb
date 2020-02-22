@@ -17,6 +17,7 @@ class User < ApplicationRecord
 
   has_many :courses, :through => :preferredsubjects
   has_many :preferredsubjects, :dependent => :destroy
+  has_many :preferences, :dependent => :destroy
 
   #Routine Creation Date: 02/14/20
   #Purpose of the Routine: Indicates the subject limit
@@ -26,6 +27,11 @@ class User < ApplicationRecord
   def subject_limit
   	10
   end
+
+  def preference_limit
+    1
+  end
+
   # attr_accessor :login
   # validates :username, presence: true, length: {maximum: 255}, uniqueness: { case_sensitive: false }, format: { with: /\A[a-zA-Z0-9]*\z/, message: "may only contain letters and numbers." }
 	# def self.find_first_by_auth_conditions(warden_conditions)

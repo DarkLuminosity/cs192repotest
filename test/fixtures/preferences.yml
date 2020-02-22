@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  choice1: MyString
+  choice2: MyString
+  choice3: MyString
+
+two:
+  choice1: MyString
+  choice2: MyString
+  choice3: MyString

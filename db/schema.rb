@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_21_103101) do
+ActiveRecord::Schema.define(version: 2020_02_22_072715) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -45,6 +45,21 @@ ActiveRecord::Schema.define(version: 2020_02_21_103101) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "preferences", force: :cascade do |t|
+    t.string "choice1"
+    t.string "choice2"
+    t.string "choice3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_preferences_on_user_id"
+  end
+
+  create_table "preferences_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "preference_id", null: false
+  end
+
   create_table "preferredsubjects", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "course_id", null: false
@@ -68,6 +83,7 @@ ActiveRecord::Schema.define(version: 2020_02_21_103101) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "preferences", "users"
   add_foreign_key "preferredsubjects", "courses"
   add_foreign_key "preferredsubjects", "users"
 end
