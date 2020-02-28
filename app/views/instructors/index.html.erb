@@ -1,39 +1,62 @@
+<%if false%> 
+License:
+This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2019-2020
+- Engelberg See
+
+Code History:
+Engelberg See - 02/21/20 - Generated instructors file, edited what to show
+Antonio Cavan - 02/26/20 - Made the UI
+
+File Creation Date: 02/21/20
+Development Group: Engelberg See
+Purpose: Displays List of Instructors with ratings
+<%end%>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Instructors</h1>
+<section id="portfolio" class="section-bg">
+      <div class="container">
+<div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h3 style="color: #413e66;" class="footer-info">Instructors</h3>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Helpfulness</th>
+                      <th>Easiness</th>
+                      <th>Pedagogy</th>
+                      <th>Overall</th>
+                      <th colspan="3"></th>
+                    </tr>
+                  </thead>
+                  <%if admin_signed_in?%>
+                    <%= link_to 'New Instructor', new_instructor_path %>
+                    <%end%>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Helpfulness</th>
-      <th>Easiness</th>
-      <th>Pedagogy</th>
-      <th>Overall</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <%if admin_signed_in?%>
-    <%= link_to 'New Instructor', new_instructor_path %>
-    <%end%>
-
-  <tbody>
-    <% @instructors.each do |instructor| %>
-      <tr>
-        <td><%= instructor.name %></td>
-        <td><%= instructor.helpfulness %></td>
-        <td><%= instructor.easiness %></td>
-        <td><%= instructor.pedagogy %></td>
-        <td><%= instructor.overall %></td>
-        <%if admin_signed_in?%>
-        <td><%= link_to 'Show', instructor %></td>
-        <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
-        <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <%end%>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+                    <tbody>
+                      <% @instructors.each do |instructor| %>
+                        <tr>
+                          <td><%= instructor.name %></td>
+                          <td><%= instructor.helpfulness %></td>
+                          <td><%= instructor.easiness %></td>
+                          <td><%= instructor.pedagogy %></td>
+                          <td><%= instructor.overall %></td>
+                          <%if admin_signed_in?%>
+                          <td><%= link_to 'Show', instructor %></td>
+                          <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
+                          <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                          <%end%>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 

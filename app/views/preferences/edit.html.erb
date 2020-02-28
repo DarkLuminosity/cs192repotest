@@ -1,6 +1,48 @@
-<h1>Editing Preference</h1>
+<%if false%> 
+License:
+This is a course requirement for CS 192 Software Engineering II under the supervision of Asst. Prof. Ma. Rowena C. Solamo of the Department of Computer Science, College of Engineering, University of the Philippines, Diliman for the AY 2019-2020
+- Engelberg See
 
-<%= render 'form', preference: @preference %>
+Code History:
+Engelberg See - 02/22/20 - Generated Preferences file
+Antonio Cavan - 02/26/20 - Made the UI
 
-<%= link_to 'Show', @preference %> |
-<%= link_to 'Back', preferences_path %>
+File Creation Date: 02/21/20
+Development Group: Engelberg See
+Purpose: Displays edit preferences
+<%end%>
+
+<section id="pricing" class="wow fadeInUp section-bg">
+
+<section id="services" class="section-bg">
+      <div class="container">
+
+        <header class="section-header text-center">
+			<h3>Edit Preference</h3>
+		</header>
+		<div class="row">
+          <div class="col-md-1 col-lg-12 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <h4 class="title"><%= render 'form', preference: @preference %>
+</a></h4>
+			<p class="description">You may start editing your preferences</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="center-block">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
+          	
+            	<div class="box">
+            	  <h4 class="title"><a href=""><%= link_to 'Back', preferences_path %>
+</a></h4>
+					<p class="description">Go back to preference page.</p>
+            	</div>
+          	</div>
+          </div>
+      	</div>
+        </div>
+
+      </div>
+    </section>
+</section>
