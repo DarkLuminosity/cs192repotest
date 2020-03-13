@@ -6,6 +6,7 @@ This is a course requirement for CS 192 Software Engineering II under the superv
 Code History:
 Engelberg See - 02/22/20 - Generated preferences file, edited what to show
 Antonio Cavan - 02/26/20 - Made the UI
+Engelberg See - 03/12/20 - Added generated schedule button
 
 File Creation Date: 02/21/20
 Development Group: Engelberg See
@@ -21,7 +22,7 @@ Purpose: Displays what the user would see when viewing preferences
           <h3>Preferences</h3>
           <p></p>
         </header>
-    
+      
       <div class="row">
          <% @preferences.each do |preference| %>
           <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
@@ -52,6 +53,15 @@ Purpose: Displays what the user would see when viewing preferences
         <br>
         <div class="row">
           
+        <div class="col-sm-12 col-xs-12 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+          <div class="box ">
+            <h4 class="title"><a href=""><%= link_to 'Generate Schedule', preferences_path %>
+            </a></h4>
+          <p class="description">Generate your schedule</p>
+          </div>
+        </div>
+
+
           <div class="col-sm-12 col-xs-12 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
             <div class="box">
               <h4 class="title"><a href=""><%= link_to 'Edit', edit_preference_path(preference) %>
@@ -79,6 +89,9 @@ Purpose: Displays what the user would see when viewing preferences
             </div>
           </div>
         </div>
+
+
+
       </div>
     </section>
 
